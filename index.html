@@ -1,0 +1,130 @@
+
+  <!-- Vueで指定された"app"要素、この中でのみVueが有効 -->
+<div id="app">
+  <v-app>
+    <v-content>
+      <v-container>
+        <v-row
+          class="text-h3 mb-3 mt-3"
+          justify="center"
+          >
+          どうぶつの森住民図鑑
+        </v-row>
+  <div class="tab-panel">
+  <!--タブ-->
+  <ul class="tab-group">
+    <li class="tab tab-A is-active">住民登録</li>
+    <li class="tab tab-B">住民一覧</li>   
+ </ul>
+ <!--タブを切り替えて表示するコンテンツ-->
+  <div class="panel-group">
+	  <div class="panel tab-A is-show">
+        <v-row
+          class="mb-3 mt-3"
+          align="center"
+          justify="center"
+          >
+          <v-col 
+            cols="4"            
+            >
+            <v-text-field
+                  class="ml-6 mr-6"
+                  v-model:value="Species"                         
+                  label="この住人はなんのどうぶつ？"
+                  placeholder="種族を入力…"
+                  outlined
+            >
+          </v-col>
+            <v-col 
+            cols="6"            
+            >
+            <v-text-field
+                  class="ml-6 mr-6"
+                  v-model:value="Name"                         
+                  label="この住人のお名前は？"
+                  placeholder="名前を入力…"
+                  outlined
+            >
+          </v-col>
+              <v-col 
+            cols="6"            
+            >
+            <v-text-field
+                  class="ml-6 mr-6"
+                  v-model:value="Personality"                         
+                  label="この住人の性格は？"
+                  placeholder="性格を入力…"
+                  outlined
+            >
+          </v-col>
+                <v-col 
+            cols="6"            
+            >
+            <v-text-field
+                  class="ml-6 mr-6"
+                  v-model:value="Imageurl"                         
+                  label="この住民の写真を入れよう！"
+                  placeholder="画像urlを入力…"
+                  outlined
+            >
+          </v-col>
+        </v-row>
+        <v-row
+          class="mb-3 mt-3"
+          align="center"
+          justify="center"
+          >
+          入力内容　種族: {{ Species }} 名前: {{ Name }} 性格: {{ Personality }} {{ Imageurl }}
+          <v-btn v-on:click="addData" 
+               
+               dark
+               small                
+               color="#3cb371"
+               rounded
+               
+             >
+            <v-icon start>
+        mdi-pencil
+      </v-icon>
+            住人登録
+               </v-btn>
+        </v-row>
+        </div>
+        <div class="panel tab-B">
+        <v-row
+        class="mb-3 mt-3"
+        justify="center"
+          >
+         <!-- ここに固定のラベルを表示 -->
+        <div>
+         種族：名前：性格：
+        </div>
+          </v-row>
+          <v-row
+          class="mb-3 mt-3"
+          justify="center"
+          > 
+          <v-btn v-on:click="readData"  
+                 
+                 dark
+                 rounded
+                 color="#00CED1"
+                 >
+             <v-icon start>
+              mdi-clipboard-outline
+      </v-icon>登録住民を表示する</v-btn>
+        </v-row>
+        <v-row 
+          class="mb-3 mt-3"
+          justify="center"
+          v-for="data in dataList"
+          v-if="dataList.length > 0">
+          種族:{{ data.Species }},名前:{{ data.Name }},性格:{{ data.Personality }},{{ Imageurl }}
+          </div>
+  　　　　</div>
+　　　　　</div>
+        </v-row>
+      </v-container>
+    </v-content>
+  </v-app>
+</div>
