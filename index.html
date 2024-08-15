@@ -122,9 +122,11 @@
                                        justify="center"
                                        v-for="data in dataList"
                                        v-if="dataList.length > 0">
-                                    種族:{{ data.Species }},名前:{{ data.Name }},性格:{{ data.Personality }}
+                                    <v-col colos="12" class="#E2F6EB" >種族:{{ data.Species }}</v-col>
+                                    <v-col colos="12" class="#FFEDEE" >名前:{{ data.Name }}</v-col>
+                                    <v-col colos="12" class="#CCE8F1" >性格:{{ data.Personality }}</v-col>
                                     <img height=100 width=100 v-bind:src="data.Imageurl">
-                            </div>
+</div>
                         </div>
                     </div>
                     </v-row>

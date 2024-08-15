@@ -8,25 +8,27 @@ body {
 
 /* タブスタイル */
 .tab-group {
-  display: flex;
-  justify-content: center;
-  background-color: #bce2e8; /* 自然をイメージしたソフトグリーン */
-  border-radius: 12px; /* 角を丸く */
-  padding: 8px;
-  margin: 10px auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 柔らかい影で奥行きを演出 */
+    display: flex;
+    justify-content: center;
+    background-color: #bce2e8; /* 自然をイメージしたソフトグリーン */
+    border-radius: 20px; /* 角を丸く */
+    padding: 12px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 柔らかい影で奥行きを演出 */
+    width: 50%;
 }
 
 .tab {
-  flex-grow: 1;
-  padding: 10px;
-  list-style: none;
-  border: solid 1px #ccc;
-  text-align: center;
-  cursor: pointer;
-  background-color: #a5d6a7; /* 明るい緑色 */
-  border-radius: 8px;
-  transition: all 0.2s ease-out;
+    flex-grow: 1;
+    padding: 12px;
+    list-style: none;
+    border: solid 1px #b3e5fc;
+    text-align: center;
+    cursor: pointer;
+    background-color: #a5d6a7; /* 明るい緑色 */
+    border-radius: 12px;
+    margin: 0 10px;
+    transition: all 0.3s ease-out;
 }
 
 .tab.is-active {
@@ -37,10 +39,10 @@ body {
 .panel {
   display: none;
   background-color: #ffffff; /* 白のパネル背景 */
-  border-radius: 12px;
+  border-radius: 20px;
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 柔らかい影 */
-  margin-top: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 柔らかい影 */
+  margin-top: 20px;
 }
 
 .panel.is-show {
@@ -51,7 +53,7 @@ body {
 .v-btn {
   background-color: #3cb371; /* 元の色 */
   border-radius: 20px; /* 丸みを帯びたボタン */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 柔らかい影 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 柔らかい影 */
   transition: background-color 0.2s ease;
 }
 
@@ -60,10 +62,10 @@ body {
 }
 .v-container {
   background-color: #f7e9c5; /* 柔らかいライトグリーンなどお好みの色 */
-  border-radius: 12px; /* 角を少し丸める */
+  border-radius: 20px; /* 角を少し丸める */
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 柔らかい影をつける */
-  margin-top: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 柔らかい影をつける */
+  margin-top: 20px;
 }
 .panel {
   background-color: #e6ffee; /* 薄い緑色 */
@@ -71,6 +73,15 @@ body {
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-top: 10px;
+}
+img {
+    width: 100%; /* 画像の幅を調整 */
+    max-width: 300px; /* 最大幅を指定 */
+    height: auto;
+    border-radius: 10px; /* 角を丸く */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 柔らかい影 */
+    object-fit: cover; /* 画像のアスペクト比を維持しつつ表示 */
+    margin-top: 10px;
 }
 
 
