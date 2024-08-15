@@ -15,7 +15,7 @@ const app = new Vue({
     addData: async function() {
 
      // speciesの入力チェック（空白か文字以外なら終了）
-    if (!this.species || !isNaN(this.species)) {
+    if (!this.Species || !isNaN(this.Species)) {
     console.log("種族が入力されていません、または数字が含まれています");
     return;
     }
@@ -23,7 +23,7 @@ const app = new Vue({
       
       //POSTメソッドで送るパラメーターを作成
       const param = {
-        Species : this.species,
+        Species : this.Species,
         Name : this.Name,
         Personality :this.Personality,
         Imageurl :this.Imageurl
