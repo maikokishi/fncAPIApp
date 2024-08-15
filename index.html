@@ -99,7 +99,8 @@
                                        v-for="data in dataList"
                                        v-if="dataList.length > 0">
                                     種族:{{ data.Species }},名前:{{ data.Name }},性格:{{ data.Personality }},{{ data.Imageurl }}
-                            </div>
+                                    <img height=200 width=200 v-bind:src="data.Imageurl">
+</div>
                         </div>
                     </div>
                     </v-row>
