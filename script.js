@@ -1,13 +1,15 @@
 const app = new Vue({
   el: '#app', // Vueが管理する一番外側のDOM要素
   vuetify: new Vuetify(),
-  data: {
-    // Vue内部で使いたい変数は全てこの中に定義する
-    Species: '', //パラメーター「Species」格納変数
-    Name: '', //パラメーター「Name」格納変数
-    Personality: '',//パラメーター「Personality」格納変数
-    Imageurl: '',//パラメーター「Imageurl」格納変数
-    
+    data() {
+        return {
+            // Vue内部で使いたい変数は全てこの中に定義する
+            Species: '', //パラメーター「Species」格納変数
+            Name: '', //パラメーター「Name」格納変数
+            Personality: '',//パラメーター「Personality」格納変数
+            Imageurl: '',//パラメーター「Imageurl」格納変数
+            speciesOptions: ['アヒル', 'アリクイ', 'イヌ', 'ウサギ', 'ウマ', 'オウシ', 'オオカミ', 'カエル', 'カバ', 'カンガルー', 'クマ', 'コアラ','コグマ', 'ゴリラ'],
+            personalities: ['ノーマル', 'ハツラツ', 'おとなっぽい', 'かっこつけ', 'のほほん', 'おっかない', 'アネゴ', 'ようき'],
     dataList: [], // データ表示用配列
   },
   methods: {
