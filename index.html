@@ -2,11 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>APICall</title>
+    <title>どうぶつの森住民図鑑</title>
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css'>
     <link rel='stylesheet' href='https://unpkg.com/@mdi/font@6.x/css/materialdesignicons.min.css'>
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900'>
+    <style>
+        .tab-group {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
 
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            background: #f0f0f0;
+        }
+
+            .tab.is-active {
+                background: #3cb371;
+                color: white;
+            }
+
+        .panel {
+            display: none;
+        }
+
+            .panel.is-show {
+                display: block;
+            }
+    </style>
 </head>
 <body>
     <!-- Vueで指定された"app"要素、この中でのみVueが有効 -->
@@ -62,7 +88,7 @@
                                 <v-row class="mb-3 mt-3"
                                        align="center"
                                        justify="center">
-                                    入力内容　種族: {{ Species }} 名前: {{ Name }} 性格: {{ Personality }} {{ Imageurl }}
+                                    入力内容　種族: {{ Species }} 名前: {{ Name }} 性格: {{ Personality }}  写真： {{ Imageurl }}
                                     <v-btn v-on:click="addData"
                                            dark
                                            small
@@ -79,9 +105,7 @@
                                 <v-row class="mb-3 mt-3"
                                        justify="center">
                                     <!-- ここに固定のラベルを表示 -->
-                                    <div>
-                                        種族：名前：性格：
-                                    </div>
+
                                 </v-row>
                                 <v-row class="mb-3 mt-3"
                                        justify="center">
@@ -98,9 +122,9 @@
                                        justify="center"
                                        v-for="data in dataList"
                                        v-if="dataList.length > 0">
-                                    種族:{{ data.Species }},名前:{{ data.Name }},性格:{{ data.Personality }},{{ data.Imageurl }}
-                                    <img height=200 width=200 v-bind:src="data.Imageurl">
-</div>
+                                    種族:{{ data.Species }},名前:{{ data.Name }},性格:{{ data.Personality }}
+                                    <img height=100 width=100 v-bind:src="data.Imageurl">
+                            </div>
                         </div>
                     </div>
                     </v-row>
@@ -118,5 +142,26 @@ https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js'></script>
 https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.2/axios.min.js'></script>
 
     <script src="./script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabs = document.querySelectorAll('.tab');
+            const panels = document.querySelectorAll('.panel');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // すべてのタブからis-activeクラスを外す
+                    tabs.forEach(item => item.classList.remove('is-active'));
+                    // クリックされたタブにis-activeクラスを追加
+                    tab.classList.add('is-active');
+
+                    // すべてのパネルを非表示にする
+                    panels.forEach(panel => panel.classList.remove('is-show'));
+                    // クリックされたタブに対応するパネルを表示する
+                    const activePanel = document.querySelector(`.panel.${tab.classList[1]}`);
+                    activePanel.classList.add('is-show');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
