@@ -60,7 +60,7 @@
                                         <v-select 
                                                   class="ml-6 mr-6"
                                                       v-model:value="Species"
-                                                      :items="speciesOptions" <!-- プルダウンの選択肢 -->
+                                                      :items="['アヒル', 'アリクイ', 'イヌ', 'ウサギ', 'ウマ', 'オウシ', 'オオカミ', 'カエル', 'カバ', 'カンガルー', 'クマ', 'コアラ','コグマ', 'ゴリラ']" <!-- プルダウンの選択肢 -->
                                                       label="この住人はなんのどうぶつ？"
                                                       placeholder="種族を入力…"
                                                       outlined
@@ -78,7 +78,7 @@
                                         
                                      <v-select class="ml-6 mr-6"
                                                       v-model:value="Personality"
-                                                      :items="personalities"
+                                                      :items="['ノーマル', 'ハツラツ', 'おとなっぽい', 'かっこつけ', 'のほほん', 'おっかない', 'アネゴ', 'ようき']"
                                                       label="この住人の性格は？"
                                                       placeholder="性格を入力…"
                                                       outlined>
