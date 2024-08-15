@@ -83,6 +83,15 @@ img {
     object-fit: cover; /* 画像のアスペクト比を維持しつつ表示 */
     margin-top: 10px;
 }
+.resident-image {
+    width: 100%; /* 画像をコンテナの幅いっぱいに表示 */
+    max-width: 500px; /* 画像の最大幅を指定 */
+    height: auto; /* 縦横比を維持して自動調整 */
+    border-radius: 10px; /* 角を丸く */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 柔らかい影 */
+    object-fit: cover; /* 画像のアスペクト比を維持しつつ表示 */
+    margin-top: 10px;
+}
 
 
 
