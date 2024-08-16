@@ -6,34 +6,55 @@
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css'>
     <link rel='stylesheet' href='https://unpkg.com/@mdi/font@6.x/css/materialdesignicons.min.css'>
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900'>
-    <style>
-        .tab-group {
-            display: flex;
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
 
-        .tab {
-            padding: 10px 20px;
-            cursor: pointer;
-            background: #f0f0f0;
-        }
-
-            .tab.is-active {
-                background: #3cb371;
-                color: white;
-            }
-
-        .panel {
-            display: none;
-        }
-
-            .panel.is-show {
-                display: block;
-            }
-    </style>
 </head>
+<style>
+    body {
+        font-family: "Comic Sans MS", "Chalkboard SE", sans-serif; /* 親しみやすいフォント */
+        color: #9CD5E4 !important;
+    }
+
+    .tab-group {
+        display: flex;
+        justify-content: center;
+        background-color: #bce2e8; /* 自然をイメージしたソフトグリーン */
+        border-radius: 12px; /* 角を丸く */
+        padding: 8px;
+        margin: 10px auto;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 柔らかい影で奥行きを演出 */
+    }
+
+    .tab {
+        flex-grow: 1;
+        padding: 10px;
+        list-style: none;
+        border: solid 1px #ccc;
+        text-align: center;
+        cursor: pointer;
+        background-color: #a5d6a7; /* 明るい緑色 */
+        border-radius: 8px;
+        transition: all 0.2s ease-out;
+    }
+
+    .tab.is-active {
+            background-color: #81c784; /* 強調された緑色 */
+            color: #fff;
+     }
+
+    .panel {
+        display: none;
+        background-color: #ECEDCD; /* 白のパネル背景 */
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 柔らかい影 */
+        margin-top: 10px;
+    }
+
+        .panel.is-show {
+            display: block;
+        }
+</style>
+
 <body>
     <!-- Vueで指定された"app"要素、この中でのみVueが有効 -->
     <div id="app">
@@ -57,14 +78,13 @@
                                        align="center"
                                        justify="center">
                                     <v-col cols="4">
-                                        <v-select 
-                                                  class="ml-6 mr-6"
-                                                      v-model:value="Species"
-                                                      :items="['アヒル', 'アリクイ', 'イヌ', 'ウサギ', 'ウマ', 'オウシ', 'オオカミ', 'カエル', 'カバ', 'カンガルー', 'クマ', 'コアラ','コグマ', 'ゴリラ']" <!-- プルダウンの選択肢 -->
-                                                      label="この住人はなんのどうぶつ？"
-                                                      placeholder="種族を入力…"
-                                                      outlined
-                                         >
+                                        <v-select class="ml-6 mr-6"
+                                                  v-model:value="Species"
+                                                  :items="['アヒル', 'アリクイ', 'イヌ', 'ウサギ', 'ウマ', 'オウシ', 'オオカミ', 'カエル', 'カバ', 'カンガルー', 'クマ', 'コアラ','コグマ', 'ゴリラ','サイ', 'サル','シカ', 'ゾウ', 'タコ', 'ダチョウ', 'トラ', 'トリ', 'ニワトリ', 'ネコ', 'ネズミ', 'ハムスター', 'ヒツジ', 'ブタ', 'ペンギン', 'メウシ', 'ヤギ', 'ライオン', 'リス', 'ワシ', 'ワニ' ]"
+                                                  label="この住人はなんのどうぶつ？"
+                                                  placeholder="種族を入力…"
+                                                  outlined>
+
                                         </v-select>
                                     </v-col>
                                     <v-col cols="6">
@@ -75,14 +95,14 @@
                                                       outlined>
                                     </v-col>
                                     <v-col cols="6">
-                                        
-                                     <v-select class="ml-6 mr-6"
-                                                      v-model:value="Personality"
-                                                      :items="['ノーマル', 'ハツラツ', 'おとなっぽい', 'かっこつけ', 'のほほん', 'おっかない', 'アネゴ', 'ようき']"
-                                                      label="この住人の性格は？"
-                                                      placeholder="性格を入力…"
-                                                      outlined>
-                                         </v-select>
+
+                                        <v-select class="ml-6 mr-6"
+                                                  v-model:value="Personality"
+                                                  :items="['ノーマル', 'ハツラツ', 'おとなっぽい', 'かっこつけ', 'のほほん', 'おっかない', 'アネゴ', 'ようき']"
+                                                  label="この住人の性格は？"
+                                                  placeholder="性格を入力…"
+                                                  outlined>
+                                        </v-select>
 
                                     </v-col>
                                     <v-col cols="6">
@@ -123,7 +143,7 @@
                                            color="#00CED1">
                                         <v-icon start>
                                             mdi-clipboard-outline
-                                        </v-icon>登録住民を表示する
+                                        </v-icon>登録住民を表示
                                     </v-btn>
                                 </v-row>
                                 <v-row class="mb-3 mt-3"
@@ -134,7 +154,7 @@
                                     <v-col colos="12" class="#CCE8F1">性格:{{ data.Personality }}</v-col>
                                     <img v-bind:src="data.Imageurl" class="resident-image">
 
-</div>
+                            </div>
                         </div>
                     </div>
                     </v-row>

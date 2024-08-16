@@ -7,7 +7,8 @@ const app = new Vue({
             Name: '', //パラメーター「Name」格納変数
             Personality: '',//パラメーター「Personality」格納変数
             Imageurl: '',//パラメーター「Imageurl」格納変数
-    dataList: [], // データ表示用配列
+
+            dataList: [], // データ表示用配列
   },
   methods: {
     // DBにデータを追加する関数

@@ -1,53 +1,6 @@
 <style>
 /* グローバルスタイル */
-body {
-  font-family: "Comic Sans MS", "Chalkboard SE", sans-serif; /* 親しみやすいフォント */
-  background-color: #f0f8ff; /* 柔らかい背景色 */
-  
-}
 
-/* タブスタイル */
-.tab-group {
-    display: flex;
-    justify-content: center;
-    background-color: #bce2e8; /* 自然をイメージしたソフトグリーン */
-    border-radius: 20px; /* 角を丸く */
-    padding: 12px;
-    margin: 20px auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 柔らかい影で奥行きを演出 */
-    width: 50%;
-}
-
-.tab {
-    flex-grow: 1;
-    padding: 12px;
-    list-style: none;
-    border: solid 1px #b3e5fc;
-    text-align: center;
-    cursor: pointer;
-    background-color: #a5d6a7; /* 明るい緑色 */
-    border-radius: 12px;
-    margin: 0 10px;
-    transition: all 0.3s ease-out;
-}
-
-.tab.is-active {
-  background-color: #81c784; /* 強調された緑色 */
-  color: #fff;
-}
-
-.panel {
-  display: none;
-  background-color: #ffffff; /* 白のパネル背景 */
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 柔らかい影 */
-  margin-top: 20px;
-}
-
-.panel.is-show {
-  display: block;
-}
 
 /* ボタンスタイル */
 .v-btn {
@@ -91,9 +44,4 @@ img {
     object-fit: fill; /* 画像のアスペクト比を維持しつつ表示 */
     margin-top: 10px;
 }
-
-
-
-
-
-</style>
+/style>
