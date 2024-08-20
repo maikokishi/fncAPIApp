@@ -151,22 +151,30 @@
                                        justify="center"
                                        v-for="data in dataList"
                                        align="center">
-                                    <v-col cols="6" class="resident-details">種族:{{ data.Species }}</v-col>
-                                    <v-col cols="6" class="resident-details">名前:{{ data.Name }}</v-col>
-                                    <v-col cols="6" class="resident-details">性格:{{ data.Personality }}</v-col>
-                                    <img v-bind:src="data.Imageurl" class="resident-image">
+                                    <v-col cols="6" class="resident-details">
+                                        <div class="resident-text">
+                                            <p>種族:{{ data.Species }}</p>
+                                            <p>名前:{{ data.Name }}</p>
+                                            <p>性格:{{ data.Personality }}</p>
+                                        </div>
+                                        </v-col>
+                                    <v-col cols="3">
+                                        <img v-bind:src="data.Imageurl" class="resident-image">
+                                    </v-col>
 
-                                    <v-btn v-on:click="deleteData(data)"
-                                           size="larage"
-                                           rounded
-                                           color="#FFDA02"
-                                           dark
-                                           fab
-                                           class="mx-2">
-                                        <v-icon start>
-                                            mdi-close-circle
-                                        </v-icon>
-                                    </v-btn>
+                                    <v-col cols="3">
+                                        <v-btn v-on:click="deleteData(data)"
+                                               size="larage"
+                                               rounded
+                                               color="#FFDA02"
+                                               dark
+                                               fab
+                                               class="mx-2">
+                                            <v-icon start>
+                                                mdi-close-circle
+                                            </v-icon>
+                                        </v-btn>
+                                    </v-col>
                                 </v-row>
 </div>
                         </div>
