@@ -62,10 +62,10 @@ const app = new Vue({
 
           //POSTメソッドで送るパラメーターを作成
           const param = {
-              Species: this.Species,
-              Name: this.Name,
-              Personality: this.Personality,
-              Imageurl: this.Imageurl
+              Species: data.Species,
+              Name: data.Name,
+              Personality: data.Personality,
+              Imageurl: data.Imageurl
           };
 
           //INSERT用のAPIを呼び出し
