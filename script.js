@@ -38,6 +38,18 @@ const app = new Vue({
       console.log(response.data);
 
       },
+      
+    // データベースからデータを取得する関数
+    readData: async function() {
+      //SELECT用のAPIを呼び出し      
+        const response = await axios.get('https://m3h-kishi-functionapi.azurewebsites.net/api/SELECT');
+      
+      //結果をコンソールに出力
+      console.log(response.data);
+      
+      //結果リストを表示用配列に代入
+      this.dataList = response.data.List;
+      },
       DeleteData: async function () {
 
           // speciesの入力チェック（空白か文字以外なら終了）
@@ -63,18 +75,8 @@ const app = new Vue({
           //結果をコンソールに出力
           console.log(response.data);
 
-      }
-    // データベースからデータを取得する関数
-    readData: async function() {
-      //SELECT用のAPIを呼び出し      
-        const response = await axios.get('https://m3h-kishi-functionapi.azurewebsites.net/api/SELECT');
-      
-      //結果をコンソールに出力
-      console.log(response.data);
-      
-      //結果リストを表示用配列に代入
-      this.dataList = response.data.List;
-    },
+      },
+
   },
 });
 document.addEventListener('DOMContentLoaded', function(){
