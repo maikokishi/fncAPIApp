@@ -50,12 +50,13 @@ const app = new Vue({
       //結果リストを表示用配列に代入
       this.dataList = response.data.List;
       },
+      //ここからDELETE
       deleteData: async function () {
 
 
           // speciesの入力チェック（空白か文字以外なら終了）
           if (!this.Species) {
-              console.log("種族が入力されていません、または数字が含まれています");
+              console.log("種族が入力されていません");
               return;
           }
 
