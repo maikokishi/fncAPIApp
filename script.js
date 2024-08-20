@@ -51,7 +51,7 @@ const app = new Vue({
       this.dataList = response.data.List;
       },
       deleteData: async function () {
-          console.log("Species value before check:", this.Species);
+
 
           // speciesの入力チェック（空白か文字以外なら終了）
           if (!this.Species || !isNaN(this.Species)) {
