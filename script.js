@@ -51,7 +51,7 @@ const app = new Vue({
       this.dataList = response.data.List;
       },
       //ここからDELETE
-      deleteData: async function () {
+      deleteData: async function (data) {
 
 
           // speciesの入力チェック（空白か文字以外なら終了）
