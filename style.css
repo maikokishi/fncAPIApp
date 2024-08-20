@@ -37,10 +37,14 @@ img {
     margin-top: 10px;
 }
 .resident-image {
-    width: 500px; /* 横幅を500pxに固定 */
-    height: 300px; /* 高さを300pxに固定 */
+    width: 100%; /* 横幅を500pxに固定 */
+    height: 200px; /* 高さを300pxに固定 */
     border-radius: 10px; /* 角を丸く */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 柔らかい影 */
-    object-fit: fill; /* 画像のアスペクト比を維持しつつ表示 */
+   
     margin-top: 10px;
+}
+
+.resident-text p {
+    margin: 0; /* 各テキストブロックの間の余白をなくす */
 }

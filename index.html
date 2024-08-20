@@ -141,7 +141,7 @@
                                     <v-btn v-on:click="readData"
                                            dark
                                            rounded
-                                           color="#00CED1">
+                                           color="#19C8B9">
                                         <v-icon start>
                                             mdi-clipboard-outline
                                         </v-icon>登録住民を表示
@@ -149,19 +149,23 @@
                                 </v-row>
                                 <v-row class="mb-3 mt-3"
                                        justify="center"
-                                       v-for="data in dataList">
-                                    <v-col cols="12" class="#E2F6EB">種族:{{ data.Species }}</v-col>
-                                    <v-col cols="12" class="#FFEDEE">名前:{{ data.Name }}</v-col>
-                                    <v-col cols="12" class="#CCE8F1">性格:{{ data.Personality }}</v-col>
+                                       v-for="data in dataList"
+                                       align="center">
+                                    <v-col cols="6" class="resident-details">種族:{{ data.Species }}</v-col>
+                                    <v-col cols="6" class="resident-details">名前:{{ data.Name }}</v-col>
+                                    <v-col cols="6" class="resident-details">性格:{{ data.Personality }}</v-col>
                                     <img v-bind:src="data.Imageurl" class="resident-image">
 
                                     <v-btn v-on:click="deleteData(data)"
-                                           dark
+                                           size="larage"
                                            rounded
-                                           color="#00CED1">
+                                           color="#FFDA02"
+                                           dark
+                                           fab
+                                           class="mx-2">
                                         <v-icon start>
-                                            mdi-clipboard-outline
-                                        </v-icon>削除
+                                            mdi-close-circle
+                                        </v-icon>
                                     </v-btn>
                                 </v-row>
 </div>
