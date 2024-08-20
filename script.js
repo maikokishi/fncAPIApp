@@ -55,7 +55,7 @@ const app = new Vue({
 
 
           // speciesの入力チェック（空白か文字以外なら終了）
-          if (!this.Species) {
+          if (!data.Species) {
               console.log("種族が入力されていません");
               return;
           }
