@@ -38,11 +38,11 @@ img {
 }
 .resident-image {
     width: 100%; /* 横幅を500pxに固定 */
-    height: 200px; /* 高さを300pxに固定 */
+    max-width: 200px; /* 高さを300pxに固定 */
+    height: auto;
     border-radius: 10px; /* 角を丸く */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 柔らかい影 */
-   
-    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
 }
 
 .resident-text p {
