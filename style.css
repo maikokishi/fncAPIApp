@@ -48,3 +48,11 @@ img {
 .resident-text p {
     margin: 0; /* 各テキストブロックの間の余白をなくす */
 }
+.rounded-card {
+    border-radius: 20px; /* カード全体の角を丸く */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 柔らかい影 */
+    background-color: #f7e9c5; /* カードの背景色を合わせる */
+}
+.v-dialog {
+    z-index: 1000; /* ポップアップが前面に表示されるようにする */
+}

@@ -118,11 +118,11 @@
                                        align="center"
                                        justify="center">
                                     入力内容　種族: {{ Species }} 名前: {{ Name }} 性格: {{ Personality }}  写真： {{ Imageurl }}
+                                    <br />
                                     <v-btn v-on:click="addData"
                                            dark
-                                           small
                                            color="#3cb371"
-                                           rounded>
+                                           rounded >
                                         <v-icon start>
                                             mdi-pencil
                                         </v-icon>
@@ -175,15 +175,15 @@
                                     </v-col>
                                 </v-row>
                                 <v-dialog v-model="dialog" max-width="500">
-                                    <v-card>
-                                        <v-card-title class="headline">本当に削除しますか？</v-card-title>
+                                    <v-card  class="rounded-card">
+                                        <v-card-title class="headline">本当に削除する？</v-card-title>
                                         <v-card-text>
-                                            この操作は元に戻せません。本当に削除してもよろしいですか？
+                                            削除すると住民の情報はもとに戻せないよ！本当に削除して大丈夫？
                                         </v-card-text>
                                         <v-card-actions>
                                             <v-spacer></v-spacer>
-                                            <v-btn color="grey" text @click="dialog = false">キャンセル</v-btn>
-                                            <v-btn color="red" text @click="confirmDeleteAction">削除</v-btn>
+                                            <v-btn rounded dark color="grey" text @click="dialog = false">やめる</v-btn>
+                                            <v-btn rounded dark color="red" text @click="confirmDeleteAction">削除する</v-btn>
                                         </v-card-actions>
                                     </v-card>
                                 </v-dialog>
