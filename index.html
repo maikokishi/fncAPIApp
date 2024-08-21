@@ -137,7 +137,8 @@
 
                                 </v-row>
                                 <v-row class="mb-3 mt-3"
-                                       justify="center">
+                                       justify="center"
+ >
                                     <v-btn v-on:click="readData"
                                            dark
                                            rounded
@@ -149,30 +150,36 @@
                                 </v-row>
                                 <v-row class="mb-3 mt-3"
                                        justify="center"
-                                       v-for="data in dataList"
-                                       align="center">
-                                    <v-col cols="12"md="6" class="resident-details">
-                                        <div class="resident-text">
-                                            <p>種族:{{ data.Species }}</p>
-                                            <p>名前:{{ data.Name }}</p>
-                                            <p>性格:{{ data.Personality }}</p>
-                                        </div>
-                                    </v-col>
-                                    <v-col cols="6" md="3">
-                                        <img v-bind:src="data.Imageurl" class="resident-image">
-                                    </v-col>
-                                    <v-col cols="6" md="3">
-                                        <v-btn v-on:click="deleteData(data)"
-                                               rounded
-                                               color="#FFDA02"
-                                               dark
-                                               fab
-                                               class="mx-2">
-                                            <v-icon start>
-                                                mdi-close-circle
-                                            </v-icon>
-                                        </v-btn>
-                                    </v-col>
+                                      align="center">
+                                    <v-col v-for="data in dataList" :key="data.id" cols="12" sm="6" md="6">
+                                        <v-card class="mx-auto my-3" max-width="100%">
+                                            <v-row no-gutters>
+                                                <v-col cols="8" class="resident-details">
+                                                    <div class="resident-text">
+                                                        <p>種族:{{ data.Species }}</p>
+                                                        <p>名前:{{ data.Name }}</p>
+                                                        <p>性格:{{ data.Personality }}</p>
+                                                    </div>
+                                                </v-col>
+                                                <v-col cols="4">
+                                                    <img v-bind:src="data.Imageurl" class="resident-image">
+                                                </v-col>
+                                            </v-row>
+                                            <v-card-actions>
+                                                <v-col cols="6" md="3">
+                                                    <v-btn v-on:click="deleteData(data)"
+                                                           rounded
+                                                           color="#FFDA02"
+                                                           dark
+                                                           fab
+                                                           class="mx-2">
+                                                        <v-icon start>
+                                                            mdi-close-circle
+                                                        </v-icon>
+                                                    </v-btn>
+                                            </v-card-actions>
+                                        </v-card>
+                                      </v-col>
                                 </v-row>
 
 
