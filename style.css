@@ -46,6 +46,8 @@ img,
     text-align: left;
 }
 .resident-details {
-    margin-right: 10px;
+  
+    margin-left: 20px
+    ; /* 情報欄を右に寄せる */
 }
 
