@@ -38,7 +38,11 @@ const app = new Vue({
           const response = await axios.post('https://m3h-kishi-functionapi.azurewebsites.net/api/INSERT',param);
       
       //結果をコンソールに出力
-      console.log(response.data);
+          console.log(response.data);
+          this.Species = '';
+          this.Name = '';
+          this.Personality = '';
+          this.Imageurl = '';
 
       },
       
