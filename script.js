@@ -9,6 +9,9 @@ const app = new Vue({
             Imageurl: '',//パラメーター「Imageurl」格納変数
 
             dataList: [], // データ表示用配列
+            dialog: false, // ダイアログ表示フラグ
+            selectedData: null,
+        
   },
   methods: {
     // DBにデータを追加する関数
@@ -49,6 +52,19 @@ const app = new Vue({
       
       //結果リストを表示用配列に代入
       this.dataList = response.data.List;
+      },
+      confirmDelete(data) {
+          this.selectedData = data; // 削除対象データを設定
+          this.dialog = true; // ダイアログを表示
+      },
+
+      // ダイアログで削除を確定する関数
+      async confirmDeleteAction() {
+          this.dialog = false; // ダイアログを閉じる
+          await this.deleteData(this.selectedData); // 削除処理を呼び出す
+
+          // 削除後にデータリストを更新
+          this.dataList = this.dataList.filter(item => item !== this.selectedData);
       },
       //ここからDELETE
       deleteData: async function (data) {
