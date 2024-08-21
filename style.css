@@ -37,7 +37,7 @@ img,
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 柔らかい影 */
     object-fit: cover; /* 画像のアスペクト比を維持しつつ表示 */
     margin-top: 10px;
-    margin-left: 20px;
+    margin-left: 30px;
     
 }
 
@@ -47,7 +47,7 @@ img,
 }
 .resident-details {
   
-    margin-left: 20px
+    margin-left: 30px
     ; /* 情報欄を右に寄せる */
 }
 
