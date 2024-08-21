@@ -31,12 +31,13 @@
 img,
 .resident-image {
     width: 100%;
-    max-width: 200px; /* 画像の最大幅 */
+    max-width: 300px; /* 画像の最大幅 */
     height: auto;
     border-radius: 10px; /* 角を丸く */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 柔らかい影 */
     object-fit: cover; /* 画像のアスペクト比を維持しつつ表示 */
     margin-top: 10px;
+    margin-left: 20px;
 }
 
 .resident-text p {
