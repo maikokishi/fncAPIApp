@@ -37,10 +37,10 @@
         transition: all 0.2s ease-out;
     }
 
-    .tab.is-active {
+        .tab.is-active {
             background-color: #81c784; /* 強調された緑色 */
             color: #fff;
-     }
+        }
 
     .panel {
         display: none;
@@ -54,6 +54,16 @@
         .panel.is-show {
             display: block;
         }
+
+    .rounded-card {
+        border-radius: 30px; /* カード全体の角を丸く */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 柔らかい影 */
+        background-color: #f7e9c5; /* カードの背景色を合わせる */
+    }
+
+    .v-dialog {
+        z-index: 1000; /* ポップアップが前面に表示されるようにする */
+    }
 </style>
 
 <body>
@@ -122,7 +132,7 @@
                                     <v-btn v-on:click="addData"
                                            dark
                                            color="#3cb371"
-                                           rounded >
+                                           rounded>
                                         <v-icon start>
                                             mdi-pencil
                                         </v-icon>
@@ -141,6 +151,7 @@
                                     <v-btn v-on:click="readData"
                                            dark
                                            rounded
+                                           x-large
                                            color="#19C8B9">
                                         <v-icon start>
                                             mdi-clipboard-outline
@@ -150,7 +161,8 @@
                                 <v-row class="mb-3 mt-3"
                                        justify="center"
                                        v-for="data in dataList"
-                                       align="center">
+                                       align="center"
+                                       >
                                     <v-col cols="12" md="6" class="resident-details">
                                         <div class="resident-text">
                                             <p>種族:{{ data.Species }}</p>
@@ -175,29 +187,33 @@
                                     </v-col>
                                 </v-row>
                                 <v-dialog v-model="dialog" max-width="500">
-                                    <v-card  class="rounded-card">
+                                    <v-card class="rounded-card">
                                         <v-card-title class="headline">本当に削除する？</v-card-title>
                                         <v-card-text>
                                             削除すると住民の情報はもとに戻せないよ！本当に削除して大丈夫？
                                         </v-card-text>
                                         <v-card-actions>
                                             <v-spacer></v-spacer>
-                                            <v-btn rounded  color="grey" text @click="dialog = false">やめる</v-btn>
-                                            <v-btn rounded  color="red" text @click="confirmDeleteAction">削除する</v-btn>
-                                        </v-card-actions>
+                                            <template>
+                                                <div class="text-center">
+                                                    <v-btn rounded color="grey" text @click="dialog = false">やめる</v-btn>
+                                                    <v-btn rounded color="red" text @click="confirmDeleteAction">削除する</v-btn>
+                                                </div>
+                                            </template>
+                                                </v-card-actions>
                                     </v-card>
                                 </v-dialog>
                             </div>
-                           
+
 
                         </div>
-                        </div>
                     </div>
-                    
-                </v-container>
-            </v-content>
-        </v-app>
     </div>
+
+
+
+
+
     <script src='
 https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js'></script>
 
