@@ -161,31 +161,33 @@
                                 <v-row class="mb-3 mt-3"
                                        justify="center"
                                        v-for="data in dataList"
-                                       align="center"
-                                       >
-                                    <v-col cols="12" md="6" class="resident-details">
-                                        <div class="resident-text">
-                                            <p>種族:{{ data.Species }}</p>
-                                            <p>名前:{{ data.Name }}</p>
-                                            <p>性格:{{ data.Personality }}</p>
-                                        </div>
-                                    </v-col>
-                                    <v-col cols="6" md="3">
-                                        <img v-bind:src="data.Imageurl" class="resident-image">
-                                    </v-col>
-                                    <v-col cols="6" md="3">
-                                        <v-btn v-on:click="confirmDelete(data)"
-                                               rounded
-                                               color="#FFDA02"
-                                               dark
-                                               fab
-                                               class="mx-2">
-                                            <v-icon start>
-                                                mdi-close-circle
-                                            </v-icon>
-                                        </v-btn>
-                                    </v-col>
+                                       align="center">
+                                    <v-col cols="12" sm="6" md="6" lg="6">
+                                        <v-col cols="12" md="6" class="resident-details">
+                                            <div class="resident-text">
+                                                <p>種族:{{ data.Species }}</p>
+                                                <p>名前:{{ data.Name }}</p>
+                                                <p>性格:{{ data.Personality }}</p>
+                                            </div>
+                                        </v-col>
+                                        <v-col cols="6" md="3">
+                                            <img v-bind:src="data.Imageurl" class="resident-image">
+                                        </v-col>
+                                        <v-col cols="6" md="3">
+                                            <v-btn v-on:click="confirmDelete(data)"
+                                                   rounded
+                                                   color="#FFDA02"
+                                                   dark
+                                                   fab
+                                                   class="mx-2">
+                                                <v-icon start>
+                                                    mdi-close-circle
+                                                </v-icon>
+                                            </v-btn>
+                                        </v-col>
                                 </v-row>
+                              
+                            
                                 <v-dialog v-model="dialog" max-width="500">
                                     <v-card class="rounded-card">
                                         <v-card-title class="headline">本当に削除する？</v-card-title>
@@ -200,7 +202,7 @@
                                                     <v-btn rounded color="red" text @click="confirmDeleteAction">削除する</v-btn>
                                                 </div>
                                             </template>
-                                                </v-card-actions>
+                                        </v-card-actions>
                                     </v-card>
                                 </v-dialog>
                             </div>
