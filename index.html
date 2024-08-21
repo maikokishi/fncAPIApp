@@ -162,15 +162,14 @@
                                        justify="center"
                                        v-for="data in dataList"
                                        align="center">
-                                    <v-col cols="12" sm="6" md="6" lg="6">
-                                        <v-col cols="12" md="6" class="resident-details">
+                                        <v-col cols="12" md="4"sm="4" class="resident-details">
                                             <div class="resident-text">
                                                 <p>種族:{{ data.Species }}</p>
                                                 <p>名前:{{ data.Name }}</p>
                                                 <p>性格:{{ data.Personality }}</p>
                                             </div>
                                         </v-col>
-                                        <v-col cols="6" md="3">
+                                        <v-col cols="12" md="4">
                                             <img v-bind:src="data.Imageurl" class="resident-image">
                                         </v-col>
                                         <v-col cols="6" md="3">
