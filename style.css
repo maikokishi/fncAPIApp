@@ -44,6 +44,7 @@ img,
 .resident-text p {
     margin: 0; /* 各テキストブロックの間の余白をなくす */
     text-align: left;
+    font-family: 'Mochiy Pop One', sans-serif;
 }
 .resident-details {
   
