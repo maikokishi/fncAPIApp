@@ -1,5 +1,4 @@
 
-/* グローバルスタイル */
 
 
 /* ボタンスタイル */
@@ -20,13 +19,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 柔らかい影をつける */
   margin-top: 20px;
 }
-.panel {
-  background-color: #e6ffee; /* 薄い緑色 */
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-top: 10px;
-}
+
 /* 画像の共通スタイル */
 img,
 .resident-image {
